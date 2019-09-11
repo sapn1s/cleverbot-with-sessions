@@ -23,11 +23,15 @@ To use cleverbot, you need an API key, which you can obtain here: https://www.cl
 
 ###Ask request:
 
-Param 1: Input message   
-Param 2: cs (optional) - previously obtained cleverbot state (session) to continue from (leave blank if new conversation)
+| Param | Type | Optional | Default | Description |  
+| --- | --- | --- | --- | --- |
+| input | String | No | | Input message. |
+| cs | String | Yes | "" | Previously obtained cleverbot state (session) to continue from (default if new conversation). |
 
 ```javascript
-bot.ask("Hello", cs).then(response => {
+let input = "Hello"
+
+bot.ask(input, cs).then(response => {
     console.log(response)
 })
 ```
@@ -43,9 +47,12 @@ cs - this parameter stands for “cleverbot state”. It is the encoded state of
 
 ###Configuring tweaking
 
-Param 1: value 0-100 (sensible to wacky)  
-Param 2: value 0-100 (shy to talkative)  
-Param 3:  value 0-100 (self-centred to attentive)  
+| Param | Type | Optional | Default | Description |  
+| --- | --- | --- | --- | --- |
+| tweak1 | Integer | Yes | -1 | Tweak from sesnsible(0) to wacky(100). |
+| tweak2 | Integer | Yes | -1 | Tweak from shy(0) to talkative(100). |
+| tweak3 | Integer | Yes | -1 | Tweak from self-centred(0) to attentive(100). |
+
 
 *Pass `-1` if you want to reset it to default
 
