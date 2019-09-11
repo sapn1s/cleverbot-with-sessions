@@ -1,6 +1,13 @@
 {
     "name" : "cleverbot-with-sessions",
-    "version": "1.0.5",
+    "version": "1.1.2",
+    "description": "A node.js client for talking to cleverbot. It allows to manage sessions and change bot's characteristics (tweaking)",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sapn1s/cleverbot-with-sessions.git"
+      },
+    "author": "Sap#7777",
     "dependencies": {
         "axios": "^0.19.0"
       }

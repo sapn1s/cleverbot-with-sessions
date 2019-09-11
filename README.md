@@ -1,6 +1,6 @@
 # cleverbot-with-sessions
 
-A node.js client for talking to cleverbot.
+A node.js client for talking to cleverbot.  
 It allows to manage sessions and change bot's characteristics (tweaking).
 
 ## Installation:
@@ -14,7 +14,7 @@ Installation via `npm`:
 To use cleverbot, you need an API key, which you can obtain here: https://www.cleverbot.com/api/my-account
 
 ```javascript
-    const cleverbotWithSessions = require('cleverbot-node');
+    const cleverbotWithSessions = require('cleverbot-with-sessions');
     
     let bot = new cleverbotWithSessions("YOUR-API-KEY")
 ```
@@ -24,7 +24,7 @@ To use cleverbot, you need an API key, which you can obtain here: https://www.cl
 ###Ask request:
 
 Param 1: Input message   
-Param 2: cs (optional) - previously obtained cleverbot state (session) to continue from - leave blank if new conversation
+Param 2: cs (optional) - previously obtained cleverbot state (session) to continue from (leave blank if new conversation)
 
 ```javascript
 bot.ask("Hello", cs).then(response => {
@@ -34,9 +34,8 @@ bot.ask("Hello", cs).then(response => {
 ###Response:
 
 ```javascript
-{ cs:
-   'MXYxCTh2MQlBdldYQ1BNM0U3MzUJMUZ2MTU2ODExMDQzNwk2NHZIZWxsby4JNjRpV2hhdCdzIHlvdXIgbmFtZT8J',
-  ouput: "What's your name?" }
+{ cs:'MXYxCTh2MQlBdldYQ1BNM0U3MzUJMUZ2MTU2ODExMDQzNwk2NHZIZWxsby4JNjRpV2hhdCdzIHlvdXIgbmFtZT8J',
+  output: "What's your name?" }
 ```
 
 cs - this parameter stands for “cleverbot state”. It is the encoded state of the conversation so far and includes the whole conversation history up to that point. (Store it somewhere to return to this particular session, it changes after each request)

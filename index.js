@@ -62,7 +62,7 @@ class Cleverbot {
               .then(function (response) {
                   let resObj = {
                       "cs" : response.data.cs,
-                      "ouput" : response.data.output
+                      "output" : response.data.output
                   }
                   resolve(resObj)
               })
